@@ -1,174 +1,133 @@
-/* General Styles */
+/* styles.css */
+
+/* General Body Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-/* Container for the to-do list */
-.container {
-    width: 400px;
-    max-width: 100%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-}
-
-/* Title Styles */
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+h1, h2 {
     color: #333;
-    text-align: center; /* Centering the title */
-    margin: 0; /* Remove default margin to make it more centered */
 }
 
-
-/* Input Field and Add Task Button */
-.add-btn-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-#task-input {
-    width: 70%;
-    padding: 10px;
-    font-size: 1em;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-}
-
-#task-input:focus {
-    border-color: #4CAF50;
-}
-
-#add-task-btn {
-    width: 25%;
-    padding: 10px;
-    font-size: 1em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#add-task-btn:hover {
-    background-color: #45a049;
+/* Task List Container */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 50px;
 }
 
 /* Task List Styles */
-ul#task-list {
+#task-list {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-/* Individual Task Item */
-li {
-    background-color: #f9f9f9;
-    margin: 12px 0;
-    padding: 15px;
-    border-radius: 10px;
+#task-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Task text styling */
-li .task-text {
-    font-size: 1.2em;
-    color: #000; /* Black text color for all tasks */
-    flex-grow: 1;
-    margin-right: 10px;
-    transition: color 0.3s ease;
-}
-
-/* Completed task styles */
-li.completed .task-text {
-    text-decoration: line-through;
-    color: #999; /* Gray color for completed tasks */
-}
-
-/* Edit button style */
-button.edit {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 5px 10px;
+    background-color: #fff;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-right: 5px;
+    transition: background-color 0.3s ease-in-out;
 }
 
-button.edit:hover {
-    background-color: #45a049;
+#task-list li:hover {
+    background-color: #f5f5f5;
 }
 
-/* Delete button style */
-button.delete {
-    background-color: #f44336;
+.task-text {
+    font-size: 18px;
+    color: #333;
+}
+
+.task-actions a {
+    text-decoration: none;
+    color: #007BFF;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.task-actions a:hover {
+    color: #0056b3;
+}
+
+/* Mark as Done Button */
+.task-done {
+    background-color: #28a745;
     color: white;
-    border: none;
     padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    border: none;
 }
 
-button.delete:hover {
-    background-color: #e53935;
+.task-done:hover {
+    background-color: #218838;
 }
 
-/* Toggle button style */
-button.toggle {
-    background-color: #2196F3;
+/* Task Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #007BFF;
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1em;
-    margin-right: 5px;
+    font-size: 16px;
 }
 
-button.toggle:hover {
-    background-color: #1976D2;
+form button:hover {
+    background-color: #0056b3;
 }
 
-/* Floating Action Button (FAB) */
-.fab {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background-color: #2196F3;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    padding: 20px;
-    font-size: 2em;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Back Link Styling */
+a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.fab:hover {
-    background-color: #1976D2;
+a:hover {
+    color: #0056b3;
 }
 
-/* Hover Effects for Task Item */
-li:hover {
-    transform: scale(1.05);
-    background-color: #e0f7fa;
+/* Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    #task-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-actions a {
+        margin: 5px 0;
+    }
 }

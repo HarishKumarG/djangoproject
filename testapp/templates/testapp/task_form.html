@@ -1,22 +1,25 @@
 <!-- testapp/templates/testapp/task_form.html -->
+{% load static %}  <!-- This line should be at the very top -->
 
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>{% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">{% if form.instance.pk %}Update Task{% else %}Create Task{% endif %}</button>
-    </form>
-    <br>
-    <a href="{% url 'task_list' %}">Back to Task List</a>
+    <div class="form-container">
+        <h1>{% if form.instance.pk %}Edit Task{% else %}New Task{% endif %}</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">{% if form.instance.pk %}Update Task{% else %}Create Task{% endif %}</button>
+        </form>
+
+        <a href="{% url 'task_list' %}">Back to Task List</a>
+    </div>
 </body>
 </html>
