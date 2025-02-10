@@ -1,5 +1,3 @@
-# testproject/urls.py
-
 from django.contrib import admin  # Import admin here
 from django.urls import path, include
 
